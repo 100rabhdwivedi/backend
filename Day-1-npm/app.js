@@ -3,7 +3,7 @@
 
 const http = require('http')
 const server = http.createServer((req,res)=>{
-    res.end("Server created")
+    res.end("Server created and updated automaticaly using nodemon")
 })
 
 server.listen(3000,()=>{

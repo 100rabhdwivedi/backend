@@ -11,6 +11,7 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "cat-me": "^1.0.3"
+    "cat-me": "^1.0.3",
+    "nodemon": "^3.1.10"
   }
 }
