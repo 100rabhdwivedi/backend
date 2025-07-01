@@ -3,7 +3,13 @@
 
 const http = require('http')
 const server = http.createServer((req,res)=>{
-    res.end("Server created and updated automaticaly using nodemon")
+    if(req.url == '/'){
+        res.end("Home page :")
+    }else if (req.url == '/profile'){
+        res.end("Profille page :")
+    }else{
+        res.end("Page not found :")
+    }
 })
 
 server.listen(3000,()=>{
