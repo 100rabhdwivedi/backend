@@ -6,17 +6,12 @@ app.use(express.json());
 const notes = [];
 
 // GET all notes
-app.get('/notes', (req, res) => {
-    res.json(notes);
-});
+app.get('/notes', (req, res) => { res.json(notes);});
 
 // CREATE a new note
 app.post('/notes', (req, res) => {
     notes.push(req.body);
-    res.json({
-        message: "Note created successfully",
-        note: req.body
-    });
+    res.json({message: "Note created successfully",note: req.body});
 });
 
 // DELETE a note by index
