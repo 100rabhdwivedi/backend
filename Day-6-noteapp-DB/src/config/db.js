@@ -5,7 +5,7 @@ function connectToDB(){
     .then(()=>{
         console.log("Database connected successfully :")
     }).catch((err)=>{
-        console.log("Database not connected :",err)
+        console.log("Database not connected :",err.message)
     })
 }
 
