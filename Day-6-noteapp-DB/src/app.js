@@ -14,6 +14,7 @@ app.use(express.urlencoded({extended: true}))
 
 
 
+
 app.get('/notes', async(req, res)=>{
     let notes = await noteModel.find()
     
