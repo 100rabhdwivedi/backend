@@ -1,9 +1,11 @@
 const mongoose = require('mongoose')
 
 function connectToDB(){
-    mongoose.connect("mongodb+srv://dwivedi100rabhh:85uqfOLLzCXYTu6a@cluster0.iq6tw.mongodb.net/noteapp")
+    mongoose.connect(process.env.MONGODB_URI)
     .then(()=>{
         console.log("Database connected successfully :")
+    }).catch((err)=>{
+        console.log("Database not connected :",err)
     })
 }
 
