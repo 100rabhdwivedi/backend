@@ -1,11 +1,26 @@
-import ImageKit from "imagekit";
-
-
-
+var mongoose = require('mongoose')
 var ImageKit = require("imagekit");
 
 var imagekit = new ImageKit({
-    publicKey : "your_public_api_key",
-    privateKey : "your_private_api_key",
-    urlEndpoint : "https://ik.imagekit.io/your_imagekit_id/"
+    publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
+    privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
+    urlEndpoint: process.env.IMAGEKIT_ENDPOINT
 });
+
+function uploadFile(file) {
+    return new Promise((resolve, reject) => {
+        imagekit.upload({
+            file: file.buffer,
+            fileName:(new mongoose.Types.ObjectId()).toString(),
+            folder:"Moddy-player"
+        }, (error, result) => {
+            if (error) {
+                reject(error)
+            } else {
+                resolve(result)
+            }
+        })
+    })
+}
+
+module.exports = uploadFile

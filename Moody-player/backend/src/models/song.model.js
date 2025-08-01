@@ -3,10 +3,11 @@ const mongoose = require('mongoose')
 const songSchema = mongoose.Schema({
     title:String,
     artist:String,
-    audio:String
+    audio:String,
+    mood:String
 })
 
 
-const song = mongoose.Model('song',songSchema)
+const song = mongoose.model('song',songSchema)
 
 module.exports = song
